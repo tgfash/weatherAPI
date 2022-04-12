@@ -54,22 +54,22 @@ function getWeatherData() {
             longitude
         } = success.coords;
     
-        var myCenter = new google.maps.LatLng(latitude,longitude);
-        function initialize() {
-            var mapProp = {
-                center: myCenter,
-                zoom: 10,
-                mapTypeId: google.maps.MapTypeId.RoadMAP
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            var marker = new google.maps.Marker({
-                position: myCenter
-            });
-            marker.setMap(map);
-        };
-        google.maps.event.addDomListener(window, 'load', initialize);
+//         var myCenter = new google.maps.LatLng(latitude,longitude);
+//         function initialize() {
+//             var mapProp = {
+//                 center: myCenter,
+//                 zoom: 10,
+//                 mapTypeId: google.maps.MapTypeId.RoadMAP
+//             };
+//             var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+//             var marker = new google.maps.Marker({
+//                 position: myCenter
+//             });
+//             marker.setMap(map);
+//         };
+//         google.maps.event.addDomListener(window, 'load', initialize);
         
-        fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&lang=vi&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&lang=vi&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
             console.log(data)
             showWeatherData(data);
@@ -172,20 +172,20 @@ function showWeatherData2(data2) {
     let latitude2 = data2.coord.lat;
     let longitude2 = data2.coord.lon;
 
-    var myCenter = new google.maps.LatLng(latitude2,longitude2);
-    function initialize2() {
-        var mapProp = {
-            center: myCenter,
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.RoadMAP
-        };
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var marker = new google.maps.Marker({
-            position: myCenter
-        });
-        marker.setMap(map);
-    };
-    google.maps.event.addDomListener(window, 'dblclick', initialize2);
+//     var myCenter = new google.maps.LatLng(latitude2,longitude2);
+//     function initialize2() {
+//         var mapProp = {
+//             center: myCenter,
+//             zoom: 10,
+//             mapTypeId: google.maps.MapTypeId.RoadMAP
+//         };
+//         var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+//         var marker = new google.maps.Marker({
+//             position: myCenter
+//         });
+//         marker.setMap(map);
+//     };
+//     google.maps.event.addDomListener(window, 'dblclick', initialize2);
    
     timezone.innerHTML = data2.name + ' , ' + data2.sys.country;
     countryEl.innerHTML = "Location : " + latitude2 + ' , ' + longitude2 
