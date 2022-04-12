@@ -69,7 +69,7 @@ function getWeatherData() {
         };
         google.maps.event.addDomListener(window, 'load', initialize);
         
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&lang=vi&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+        fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&lang=vi&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
             console.log(data)
             showWeatherData(data);
@@ -152,7 +152,7 @@ function showWeatherData(data) {
 function changeWeatherBySearching() {
     let capitalSearch = search.value.trim();
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${capitalSearch}&appid=${API_KEY}`).then(res => res.json()).then(data2 => {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${capitalSearch}&appid=${API_KEY}`).then(res => res.json()).then(data2 => {
         console.log(data2);
         showWeatherData2(data2)
     });
@@ -229,7 +229,7 @@ function showWeatherData2(data2) {
         </div>       
        `;
 
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude2}&lon=${longitude2}&lang=vi&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data3 => {
+    fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${latitude2}&lon=${longitude2}&lang=vi&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data3 => {
         console.log(data3)
         clearInterval(x);
         let timezone = data3.timezone;
