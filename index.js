@@ -125,7 +125,7 @@ function showWeatherData(data) {
     data.daily.forEach((day, idx) => {
         if (idx == 0) {
             currentTempEl.innerHTML = `
-             <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="icon" class="w-icon">             
+             <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="icon" class="w-icon">             
              <div class="other">            
                  <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
                  <div>Thời tiết dự báo : ${day.weather[0].description}</div>
@@ -138,7 +138,7 @@ function showWeatherData(data) {
             otherDayForcast += `
              <div class="weather-forecast-item">
                  <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
-                 <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+                 <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
                  <div>Thời tiết dự báo : ${day.weather[0].description}</div>
                  <div class="temp">Nhiệt độ ban ngày :<br> ${day.temp.day}&#176;C</div>
                  <div class="temp">Nhiệt độ ban đêm :<br> ${day.temp.night}&#176;C</div>               
@@ -255,7 +255,7 @@ function showWeatherData2(data2) {
         data3.daily.forEach((day, idx) => {
             if (idx == 0) {
                 currentTempEl.innerHTML = `
-                 <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="icon" class="w-icon">             
+                 <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="icon" class="w-icon">             
                  <div class="other">            
                      <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
                      <div>Thời tiết dự báo : ${day.weather[0].description}</div>
@@ -268,7 +268,7 @@ function showWeatherData2(data2) {
                 otherDayForcast += `
                  <div class="weather-forecast-item">
                      <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
-                     <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+                     <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
                      <div>Thời tiết dự báo : ${day.weather[0].description}</div>
                      <div class="temp">Nhiệt độ ban ngày :<br> ${day.temp.day}&#176;C</div>
                      <div class="temp">Nhiệt độ ban đêm :<br> ${day.temp.night}&#176;C</div>               
