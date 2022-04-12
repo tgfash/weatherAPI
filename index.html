@@ -10,6 +10,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
     <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCjVKktjzfhxtLrPYG_vKEGhkoDAbegn1Y&callback=placesSearch"></script>         -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
 </head>
 
 <body>
@@ -37,10 +40,17 @@
                     </div>
                 </div>
             </div>
+            <form autocomplete="off">
+                <div class="search-container autocomplete">
+                    <input type="text" spellcheck="false" class="txtSearch" id="searchTextField" placeholder="City">
 
+                </div>
+            </form>
             <div class="place-container">
                 <div class="time-zone" id="time-zone">Asia</div>
                 <div class="country" id="country">VN</div>
+                <br>
+                <div id="googleMap" class="map" style="width: 300px;height: 300px;"></div>
             </div>
 
             <div class="future-forecast">
@@ -94,7 +104,7 @@
                         <div class="temp">Day 30 &#176;C </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

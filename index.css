@@ -5,7 +5,7 @@
 }
 
 body {
-    background: url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
+    background: url(/img/background1.png);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -39,6 +39,21 @@ body {
 
 .date-container .date {
     font-size: 30px;
+}
+
+.txtSearch{
+    width: 150%;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background:lightblue;
+    border-radius: 0 15px 0 15px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.txtSearch:focus{
+    background: lightcyan;
+    border-radius: 15px 0 15px 0;
 }
 
 .place-container {
@@ -75,6 +90,7 @@ body {
     background: rgba(24, 24, 27, 0.8);
     padding: 25px;
     position: fixed;
+    left: 0;
     bottom: 0;
     display: flex;
     color: white;
@@ -142,7 +158,9 @@ body {
     .container {
         padding: 20px;
     }
-
+    .search-container{
+        width: 20%;
+    }
     .future-forecast {
         justify-content: start;
         align-items: none;
@@ -182,7 +200,11 @@ body {
         font-size: 14px;
     }
 }
-
+@media only screen and (max-width: 1024px) {
+    .search-container{
+        width: 30%;
+    }
+}
 @media only screen and (max-width: 1400px) {
     .future-forecast {
         justify-content: start;
@@ -190,3 +212,39 @@ body {
         overflow-x: scroll;
     }
 }
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+    background-color: lightblue;
+    width: 150%;
+  }
+  
+  /*when hovering an item:*/
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }  
